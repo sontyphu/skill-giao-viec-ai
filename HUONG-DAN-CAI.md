@@ -7,10 +7,10 @@ Skill nhận việc: bạn giao một việc, AI hiểu ý bạn trước, chưa
 Mở công cụ AI của bạn, chép nguyên khối dưới đây, dán vào ô nhắn rồi gửi.
 
 ```
-Tôi đang học khoá AI Agent Mastery của Lê Thanh Sơn. Bài học yêu cầu tôi cài một skill mẫu vào máy mình, và tôi nhờ bạn làm giúp.
+Cài giúp tôi một skill vào máy.
 
 Nguồn: https://github.com/sontyphu/skill-giao-viec-ai
-Đây là kho công khai của giảng viên, chỉ có 2 tệp văn bản là SKILL.md và HUONG-DAN-CAI.md. Không có mã chạy, không có script, không cài thêm phần mềm, không cần khoá hay mật khẩu, không gửi dữ liệu của tôi đi đâu.
+Đây là kho công khai, chỉ có 2 tệp văn bản là SKILL.md và HUONG-DAN-CAI.md. Không có mã chạy, không có script, không cài thêm phần mềm, không cần khoá hay mật khẩu, không gửi dữ liệu của tôi đi đâu.
 
 Làm giúp tôi 4 việc theo đúng thứ tự:
 
