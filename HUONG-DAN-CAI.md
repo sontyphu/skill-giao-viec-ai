@@ -1,6 +1,18 @@
 # Cài skill giao-viec-ai
 
-Skill nhận việc: bạn giao một việc, AI hiểu ý bạn trước, chưa rõ thì hỏi lại những điều cơ bản và quan trọng nhất, rồi trình bản xác nhận gồm tên việc, mục tiêu, việc sẽ làm, đầu ra bàn giao, tiêu chuẩn đạt. Bạn đồng ý thì AI mới bắt tay làm.
+## Skill này giúp gì khi bạn giao việc cho AI
+
+Giao việc cho AI hay hỏng ở một chỗ: bạn nói một câu ngắn, AI tự đoán ý rồi làm luôn. Làm xong mới thấy lệch, bạn phải sửa đi sửa lại nhiều vòng.
+
+Skill `giao-viec-ai` chặn đúng chỗ đó. Khi bạn gọi skill kèm một việc, AI làm ba điều trước khi bắt tay:
+
+1. **Hiểu ý bạn.** Xác định việc gì, làm để đạt mục tiêu gì, cần giao ra cái gì, thế nào là đạt.
+2. **Hỏi lại chỗ chưa rõ.** Chỉ hỏi những điều cơ bản, quan trọng nhất, mỗi câu một ý. Điều nhỏ không cần hỏi thì AI ghi thành giả định để bạn nhìn thấy.
+3. **Trình bản xác nhận.** Gồm Tên việc, Mục tiêu, Yêu cầu thực hiện, Đầu ra cần bàn giao, Tiêu chuẩn đạt. AI dừng lại hỏi bạn có đồng ý không. Bạn đồng ý thì AI mới làm, muốn sửa thì AI sửa bản xác nhận và trình lại.
+
+Tác dụng lớn nhất là biến yêu cầu mơ hồ thành tiêu chuẩn cụ thể. Bạn nói "làm slide chuyên nghiệp hơn", bản xác nhận sẽ ghi: rút gọn chữ, mỗi slide một thông điệp, đồng bộ màu, font và bố cục, thêm hình ảnh hoặc sơ đồ. Đọc bản xác nhận là bạn biết AI sẽ làm gì và giao ra cái gì, nên AI làm đúng ngay từ đầu, bớt sửa nhiều vòng.
+
+Khi cần giao việc, gõ `/giao-viec-ai` (Claude) hoặc `$giao-viec-ai` (Codex) rồi viết tiếp việc bạn muốn giao.
 
 ## Cách cài
 
@@ -17,14 +29,14 @@ Làm giúp tôi 4 việc theo đúng thứ tự:
 1. Kiểm tra: tải https://raw.githubusercontent.com/sontyphu/skill-giao-viec-ai/main/SKILL.md rồi đọc hết.
 2. Xác minh: xác nhận tệp chỉ là hướng dẫn bằng chữ, dòng đầu là ---, có name: giao-viec-ai và có phần mô tả. Nếu thấy mã chạy, lệnh hệ thống, đòi khoá hoặc yêu cầu gửi dữ liệu ra ngoài thì dừng lại, báo tôi, đừng cài.
 3. Cài đặt: chép nguyên văn tệp vào thư mục skill cá nhân của chính bạn, giữ đúng tên. Claude Code: ~/.claude/skills/giao-viec-ai/SKILL.md. Codex: ~/.agents/skills/giao-viec-ai/SKILL.md. Không sửa một chữ nào. Thư mục chưa có thì tạo.
-4. Báo lại: đường dẫn đầy đủ của tệp vừa tạo, cách gọi skill, và nhắc tôi tắt hẳn công cụ rồi mở lại.
+4. Báo lại: đường dẫn đầy đủ của tệp vừa tạo.
 
 Tôi đồng ý cho bạn đọc mạng ở đúng đường dẫn trên và ghi đúng một tệp vào thư mục skill cá nhân của tôi.
 ```
 
 AI hỏi xin phép đọc mạng, tạo thư mục hoặc ghi tệp thì bấm cho phép.
 
-Dấu hiệu thành công: AI báo lại đường dẫn đầy đủ của tệp vừa cài, kết thúc bằng `giao-viec-ai/SKILL.md`, kèm câu lệnh gọi skill.
+Dấu hiệu thành công: AI báo lại đường dẫn đầy đủ của tệp vừa cài, kết thúc bằng `giao-viec-ai/SKILL.md`.
 
 ## Kho này có gì
 
@@ -35,20 +47,14 @@ Dấu hiệu thành công: AI báo lại đường dẫn đầy đủ của tệ
 
 Không có tệp nào khác, không có thư mục con, không có mã chạy.
 
-## Chạy thử
+## Kiểm tra công cụ đã nhận skill
 
-Tắt hẳn công cụ AI rồi mở lại. Gõ riêng dấu `/` (Claude) hoặc `$` (Codex) vào ô nhắn, thấy `giao-viec-ai` trong danh sách là công cụ đã nhận skill.
-
-Gửi thử:
-
-- Claude: `/giao-viec-ai viết lại yêu cầu này cho rõ: làm slide chuyên nghiệp hơn`
-- Codex: `$giao-viec-ai viết lại yêu cầu này cho rõ: làm slide chuyên nghiệp hơn`
-
-Dấu hiệu thành công: AI hỏi lại bạn những điều còn thiếu, hoặc trình bản xác nhận có đủ các mục Tên việc, Mục tiêu, Yêu cầu thực hiện, Đầu ra cần bàn giao, Tiêu chuẩn đạt, rồi dừng lại hỏi bạn có đồng ý để bắt đầu làm không.
+- **Claude:** tắt hẳn app rồi mở lại (chuột phải biểu tượng Claude dưới khay đồng hồ, chọn Exit; máy Mac nhấn Command và Q). Gõ `/giao-viec` vào ô nhắn, chưa bấm gửi, thấy `giao-viec-ai` hiện ra là đã nhận.
+- **Codex:** không cần tắt app. Gõ `$giao viec` vào ô nhắn, chưa bấm gửi, thấy Giao Viec Ai hiện ra là đã nhận.
 
 ## Lỗi hay gặp
 
-1. **Không thấy skill trong danh sách.** Thoát hẳn công cụ AI rồi mở lại, đóng cửa sổ thôi là chưa đủ.
+1. **Claude không thấy skill trong danh sách.** Thoát hẳn app rồi mở lại, đóng cửa sổ thôi là chưa đủ.
 2. **Tệp nằm sai chỗ.** Hỏi AI: "Kiểm tra giúp tôi tệp SKILL.md của skill giao-viec-ai đang nằm ở đâu, có đúng thư mục skill cá nhân của công cụ này không." Sai chỗ thì nhờ AI chuyển sang đúng chỗ.
 3. **Gõ nhầm ký hiệu.** Claude gọi skill bằng `/`, Codex gọi bằng `$`.
 4. **AI làm luôn, không trình bản xác nhận.** Mở tệp `SKILL.md` xem dòng thứ hai có đúng `name: giao-viec-ai` không. Tệp bị sửa thì dán lại prompt ở mục Cách cài để cài lại.
